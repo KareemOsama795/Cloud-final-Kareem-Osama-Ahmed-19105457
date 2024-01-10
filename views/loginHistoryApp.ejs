@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login Table</title>
+</head>
+<body>
+  <h1>User Login Table</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Login Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.loginDate %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

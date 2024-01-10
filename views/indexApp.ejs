@@ -1,0 +1,46 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/E:/AAST semester 9/Cloud computing/FInal exam/Cloud final Kareem Osama Ahmed 19105457/viewsindexStyle.css">
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="button" onclick="login()">Login</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      function login() {
+        const username = $('#username').val();
+        const password = $('#password').val();
+
+        $.ajax({
+          type: 'POST',
+          url: '/api/login',
+          data: { username, password },
+          success: function (response) {
+            if (response) {
+              window.location.href = '\views\dashboardApp';
+            } else {
+              alert('Wrong Credentials');
+            }
+          },
+          error: function () {
+            alert('Error occurred during login');
+          }
+        });
+      }
+    </script>
+  </body>
+  </html>

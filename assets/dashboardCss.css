@@ -1,0 +1,17 @@
+/* Centered h1 with color orange */
+h1.text-orange {
+    text-align: center;
+    color: orange;
+}
+
+/* Centered image with width of 300px */
+.text-center img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+}
+
+/* Left-aligned h3 with color blue for Add Department and Add User */
+h3.text-blue {
+    color: blue;
+}
